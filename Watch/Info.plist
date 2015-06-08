@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>APIKey</key>
+	<string>eyJhbGciOiJSU0EtU0hBMjU2IiwidmVyIjoiMSJ9.eyJhcHBGYW1pbHlJZCI6ImFtem4xLmFwcGxpY2F0aW9uLjU4NmQ0YzUwZTY0YTQ5MmJhOWM0NjAzYzFmOGU1NzllIiwiaWQiOiJjNGQ2MmMwZS0wY2NjLTExZTUtOTg4NC05NzdhZTI0OWE1YjEiLCJhcHBJZCI6ImFtem4xLmFwcGxpY2F0aW9uLWNsaWVudC44OTFmOTY1OTY0MTk0ZGRjYjg2NzkzODBlMGNmMjRmZSIsImJ1bmRsZVNlZWRJZCI6ImNvbS5hY2NlbGVyby5XYXRjaCIsImVuZHBvaW50cyI6eyJhdXRoeiI6Imh0dHBzOi8vd3d3LmFtYXpvbi5jb20vYXAvb2EiLCJ0b2tlbkV4Y2hhbmdlIjoiaHR0cHM6Ly9hcGkuYW1hem9uLmNvbS9hdXRoL28yL3Rva2VuIn0sImlzcyI6IkFtYXpvbiIsImJ1bmRsZUlkIjoiY29tLmFjY2VsZXJvLldhdGNoIiwidHJ1c3RQb29sIjpudWxsLCJ2ZXIiOiIzIiwiYXBwVmFyaWFudElkIjoiYW16bjEuYXBwbGljYXRpb24tY2xpZW50Ljg5MWY5NjU5NjQxOTRkZGNiODY3OTM4MGUwY2YyNGZlIiwidHlwZSI6IkFQSUtleSIsImlhdCI6IjE0MzM2NTA5MzIyODYiLCJjbGllbnRJZCI6ImFtem4xLmFwcGxpY2F0aW9uLW9hMi1jbGllbnQuNDI1NjNiOThhNzlmNDAwNDhkZTU3MWNhYjQxMGI5YmMifQ==.Lx6N5dXJG+8AQgbKQN09e4viV+SIn9smiHn+db2zcCVTIDmw+yNCwh/hKAsC4XLVpAlEsOtCe7ckmm7SST4CMYxDf2pxntOJfZx7uMXl2c9IcSOMccnODf5syf4PpIMIppHz9V/QuOHXjYHUpeKmxqlRcj1IjApViaUgvMYp1NeQhwx8Of9W2zBayI+QW34W4nKemEHUtgwHgwPWD6V2ROUl3wEv+y5gu199/NInvnh5kOUoLQg6OTwOsAhts43E1e/oQ+v7Dk2pe5WOV0Q+UXP3jZYsjr4AhrMZGlV4mRdvXRaw8he31vvFUYdWpcz68V5L+ZgfVjoTq/2QZ9KnTg==</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -18,6 +20,17 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.accelero.$(PRODUCT_NAME:rfc1034identifier)</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>amzn-com.accelero.$(PRODUCT_NAME:rfc1034identifier)</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>

@@ -13,10 +13,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+        AWSLogger.defaultLogger().logLevel = .Verbose
+
+        let credentialsProvider = AWSCognitoCredentialsProvider(
+            regionType: AWSRegionType.USEast1, identityPoolId: "us-east-1:45f3db13-a243-45f9-aba8-a4c0d04c0c0b")
+        
+        let defaultServiceConfiguration = AWSServiceConfiguration(
+            region: AWSRegionType.USEast1, credentialsProvider: credentialsProvider)
+        
+        AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = defaultServiceConfiguration
+
         return true
+    }
+    
+    func application(application: UIApplication, openURL: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        // Pass on the url to the SDK to parse authorization code from the url.
+        let isValidRedirectSignInURL = AIMobileLib.handleOpenURL(openURL, sourceApplication: sourceApplication)
+        
+        return isValidRedirectSignInURL
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -40,7 +56,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 

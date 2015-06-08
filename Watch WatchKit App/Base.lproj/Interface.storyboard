@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Top-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="Top" contentMode="scaleAspectFill" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watch_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="center" verticalAlignment="bottom" id="pOr-DM-oFf"/>
+                        <button width="1" alignment="left" title="Beach" id="m1B-OA-H9A">
+                            <connections>
+                                <segue destination="wbf-Je-lGd" kind="modal" id="jlN-fk-spb"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Sea" id="uvo-he-H03">
+                            <connections>
+                                <segue destination="gsA-8x-UeK" kind="modal" id="Y5J-UF-NFM"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <menu key="menu" id="kLk-ya-r7i">
+                        <items>
+                            <menuItem title="Beach" id="LkP-BZ-ic0">
+                                <connections>
+                                    <action selector="beach" destination="AgC-eL-Hgc" id="QPo-Z8-zvu"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Mountains" id="ZxJ-Ju-7gw">
+                                <connections>
+                                    <action selector="mountains" destination="AgC-eL-Hgc" id="aN8-bL-g8K"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Sea" id="m9G-Tb-wrD">
+                                <connections>
+                                    <action selector="sea" destination="AgC-eL-Hgc" id="nXu-4j-qXA"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </controller>
+            </objects>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="tt2-ki-bAs">
+            <objects>
+                <glanceController id="g32-rP-MPb">
+                    <items>
+                        <group alignment="left" id="MtL-mB-3Lc">
+                            <items>
+                                <label alignment="left" text="Run Time" id="l2l-X4-HwY"/>
+                            </items>
+                        </group>
+                        <group alignment="left" id="2L1-re-wiU">
+                            <items>
+                                <timer alignment="center" verticalAlignment="center" enabled="YES" id="2yy-nl-0pP">
+                                    <color key="textColor" red="1" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="28"/>
+                                </timer>
+                            </items>
+                        </group>
+                    </items>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="438" y="667"/>
+        </scene>
+        <!--Sea-->
+        <scene sceneID="rcd-C7-3om">
+            <objects>
+                <controller identifier="Sea" title="Sea" backgroundImage="xmas2003-1" contentMode="scaleAspectFit" id="gsA-8x-UeK"/>
+            </objects>
+            <point key="canvasLocation" x="635" y="585"/>
+        </scene>
+        <!--Beach-->
+        <scene sceneID="VT5-c3-sbI">
+            <objects>
+                <controller identifier="Beach" title="Beach" backgroundImage="IMG_3066" contentMode="scaleAspectFill" id="wbf-Je-lGd"/>
+            </objects>
+            <point key="canvasLocation" x="638" y="347"/>
+        </scene>
+    </scenes>
+</document>
