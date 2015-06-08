@@ -21,10 +21,10 @@ class GetProfileDelegate: NSObject, AIAuthenticationDelegate {
         // and pass it to the parent view controller
         
         let dict = apiResult.result as? NSDictionary
-        let name = dict!.valueForKey("name") as! String
-        let email = dict!.valueForKey("email") as! String
-        let userId = dict!.valueForKey("user_id") as! String
-        let postal_code = dict!.valueForKey("postal_code") as! String
+        parentController.nameField.text = dict!.valueForKey("name") as? String
+        parentController.emailField.text = dict!.valueForKey("email") as? String
+        parentController.idField.text = dict!.valueForKey("user_id") as? String
+        parentController.postalField.text = dict!.valueForKey("postal_code") as? String
         
         // Pass data to view controller!
         var requestScopes: [String] = ["profile", "postal_code"]

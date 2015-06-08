@@ -29,6 +29,7 @@
 		D353E6BB1B1BB1FE005B203A /* Watch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D353E6A31B1BB1FE005B203A /* Watch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D353E6C41B1BBBCD005B203A /* NotificationPayload.apns in Resources */ = {isa = PBXBuildFile; fileRef = D353E6C31B1BBBCD005B203A /* NotificationPayload.apns */; };
 		D3A83E081B250E3F0051A561 /* AccessTokenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A83E071B250E3F0051A561 /* AccessTokenDelegate.swift */; };
+		D3A83E0A1B255E370051A561 /* LogoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A83E091B255E370051A561 /* LogoutDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		D353E6B71B1BB1FE005B203A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D353E6C31B1BBBCD005B203A /* NotificationPayload.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NotificationPayload.apns; sourceTree = "<group>"; };
 		D3A83E071B250E3F0051A561 /* AccessTokenDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenDelegate.swift; sourceTree = "<group>"; };
+		D3A83E091B255E370051A561 /* LogoutDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutDelegate.swift; sourceTree = "<group>"; };
 		F28D94F0BB4761ED166FA774 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,6 +190,7 @@
 				D342C46A1B23E160003CE7E4 /* AuthorizeUserDelegate.swift */,
 				D342C46C1B23E267003CE7E4 /* GetProfileDelegate.swift */,
 				D3A83E071B250E3F0051A561 /* AccessTokenDelegate.swift */,
+				D3A83E091B255E370051A561 /* LogoutDelegate.swift */,
 			);
 			path = Watch;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 			files = (
 				D353E6821B1BB1E8005B203A /* ViewController.swift in Sources */,
 				D3A83E081B250E3F0051A561 /* AccessTokenDelegate.swift in Sources */,
+				D3A83E0A1B255E370051A561 /* LogoutDelegate.swift in Sources */,
 				D342C46B1B23E160003CE7E4 /* AuthorizeUserDelegate.swift in Sources */,
 				D353E6801B1BB1E8005B203A /* AppDelegate.swift in Sources */,
 				D342C46D1B23E267003CE7E4 /* GetProfileDelegate.swift in Sources */,

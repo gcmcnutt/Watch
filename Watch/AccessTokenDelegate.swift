@@ -21,21 +21,10 @@ class AccessTokenDelegate: NSObject, AIAuthenticationDelegate {
     }
     
     @objc func requestDidFail(errorResponse: APIError) {
-        // Get Profile request failed for profile scope.
-        
-        // If error code = kAIApplicationNotAuthorized,
-        // allow user to log in again.
-        if (errorResponse.error.code == kAIApplicationNotAuthorized) {
-            // Show authorize user button.
-            //parentController.showLoginPage()
-        }
-        else {
-            // Handle other errors
-            let error = UIAlertView(title: "",
-                message: "errorMessage:" + errorResponse.error.message,
-                delegate: nil,
-                cancelButtonTitle: "OK")
-            error.show()
-        }
+        let error = UIAlertView(title: "",
+            message: "errorMessage:" + errorResponse.error.message,
+            delegate: nil,
+            cancelButtonTitle: "OK")
+        error.show()
     }
 }

@@ -21,6 +21,10 @@ class ViewController: UIViewController {
     }
 
     @IBOutlet var photoFrame: [UIImageView]!
+    @IBOutlet weak var nameField: UILabel!
+    @IBOutlet weak var emailField: UILabel!
+    @IBOutlet weak var idField: UILabel!
+    @IBOutlet weak var postalField: UILabel!
     
     @IBAction func fetchS3(sender: AnyObject) {
         let key = "DSCF3169.png"
@@ -62,5 +66,12 @@ class ViewController: UIViewController {
         let delegate = AuthorizeUserDelegate(parentController: self)
         AIMobileLib.authorizeUserForScopes(requestScopes, delegate: delegate)
     }
+    
+    @IBAction func amznLogout(sender: AnyObject) {
+        let delegate = LogoutDelegate(parentController: self)
+        
+        AIMobileLib.clearAuthorizationState(delegate)
+    }
+
 }
 
