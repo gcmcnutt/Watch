@@ -23,6 +23,9 @@ class LogoutDelegate: NSObject, AIAuthenticationDelegate {
         parentController.idField.text = ""
         parentController.postalField.text = ""
 
+        var credentialsProvider = AWSServiceManager.defaultServiceManager().defaultServiceConfiguration.credentialsProvider as! AWSCognitoCredentialsProvider
+        credentialsProvider.logins = [ : ]
+
         let alert = UIAlertView(title: "",
             message: "User Logged out.",
             delegate: nil,

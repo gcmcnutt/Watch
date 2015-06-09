@@ -11,15 +11,13 @@ import Foundation
 class AccessTokenDelegate: NSObject, AIAuthenticationDelegate {
     
     @objc func requestDidSucceed(apiResult: APIResult!) {
-        let dict = apiResult.result as? NSDictionary
+        let token = apiResult.result as! String
         
-            
-            // in iOS Amazon calls the requestDidSucceed method in your
-            // AMZNAccessTokenDelegate implementation
-            //- (void)requestDidSucceed:(APIResult *)apiResult {
-            //    credentialsProvider.logins = @{ AWSCognitoLoginProviderKeyLoginWithAmazon:apiResult.result);
+        var credentialsProvider = AWSServiceManager.defaultServiceManager().defaultServiceConfiguration.credentialsProvider as! AWSCognitoCredentialsProvider
+        credentialsProvider.logins = [ "www.amazon.com": token ]
     }
-    
+ 
+
     @objc func requestDidFail(errorResponse: APIError) {
         let error = UIAlertView(title: "",
             message: "errorMessage:" + errorResponse.error.message,

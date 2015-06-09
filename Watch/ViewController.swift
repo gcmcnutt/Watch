@@ -42,8 +42,11 @@ class ViewController: UIViewController {
         transferManager.download(downloadRequest).continueWithBlock {
             (task: BFTask!) -> AnyObject! in
             if task.error != nil {
-                println("Error downloading")
-                println(task.error.description)
+                let error = UIAlertView(title: "",
+                    message: "errorMessage:" + task.error.description,
+                    delegate: nil,
+                    cancelButtonTitle: "OK")
+                error.show()
             }
             else {
                 // Set the UIImageView to show the file that was downloaded
