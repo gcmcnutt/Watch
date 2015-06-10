@@ -22,6 +22,9 @@ class LogoutDelegate: NSObject, AIAuthenticationDelegate {
         parentController.emailField.text = ""
         parentController.idField.text = ""
         parentController.postalField.text = ""
+        if (parentController.photoFrame != nil) {
+            parentController.photoFrame[0].image = nil
+        }
 
         var credentialsProvider = AWSServiceManager.defaultServiceManager().defaultServiceConfiguration.credentialsProvider as! AWSCognitoCredentialsProvider
         credentialsProvider.logins = [ : ]
@@ -35,7 +38,7 @@ class LogoutDelegate: NSObject, AIAuthenticationDelegate {
     
     @objc func requestDidFail(errorResponse: APIError) {
         let error = UIAlertView(title: "",
-            message: "errorMessage:" + errorResponse.error.message,
+            message: "Logout:" + errorResponse.error.message,
             delegate: nil,
             cancelButtonTitle: "OK")
         error.show()

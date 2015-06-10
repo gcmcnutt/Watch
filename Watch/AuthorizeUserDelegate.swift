@@ -16,21 +16,22 @@ class AuthorizeUserDelegate: NSObject, AIAuthenticationDelegate {
     }
     
     @objc func requestDidSucceed(apiResult: APIResult!) {
-        // Your code after the user authorizes application for
-        // requested scopes.
-    
-        // Load new view controller with user identifying information
-        // as the user is now successfully logged in.
-        let delegate = GetProfileDelegate(parentController: parentController)
-        
-        AIMobileLib.getProfile(delegate)
+        launchGetAccessToken()
     }
     
     @objc func requestDidFail(errorResponse: APIError) {
         let error = UIAlertView(title: "",
-            message: "errorMessage:" + errorResponse.error.message,
+            message: "AuthorizeUser:" + errorResponse.error.message,
             delegate: nil,
             cancelButtonTitle: "OK")
         error.show()
+    }
+    
+    func launchGetAccessToken() {
+        // initialize the token system
+        let delegate = AccessTokenDelegate(parentController: parentController)
+        var requestScopes: [String] = ["profile", "postal_code"]
+        AIMobileLib.getAccessTokenForScopes(requestScopes, withOverrideParams: nil, delegate: delegate)
+
     }
 }

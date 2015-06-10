@@ -25,12 +25,6 @@ class GetProfileDelegate: NSObject, AIAuthenticationDelegate {
         parentController.emailField.text = dict!.valueForKey("email") as? String
         parentController.idField.text = dict!.valueForKey("user_id") as? String
         parentController.postalField.text = dict!.valueForKey("postal_code") as? String
-        
-        // Pass data to view controller!
-        var requestScopes: [String] = ["profile", "postal_code"]
-        let delegate = AccessTokenDelegate()
-
-        AIMobileLib.getAccessTokenForScopes(requestScopes, withOverrideParams: nil, delegate: delegate)
     }
     
     @objc func requestDidFail(errorResponse: APIError) {
@@ -45,7 +39,7 @@ class GetProfileDelegate: NSObject, AIAuthenticationDelegate {
         else {
             // Handle other errors
             let error = UIAlertView(title: "",
-                message: "errorMessage:" + errorResponse.error.message,
+                message: "GetProfile:" + errorResponse.error.message,
                 delegate: nil,
                 cancelButtonTitle: "OK")
             error.show()

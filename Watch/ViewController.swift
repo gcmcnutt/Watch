@@ -12,7 +12,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // see if we are already logged in
+        let delegate = AuthorizeUserDelegate(parentController: self)
+        delegate.launchGetAccessToken()
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,10 +63,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func amznLogin(sender: AnyObject) {
-        // Make authorize call to SDK to get secure access token for the user.
-        // While making the first call you can specify the minimum basic
-        // scopes needed.
-        
         // Requesting both scopes for the current user.
         var requestScopes: [String] = ["profile", "postal_code"]
         let delegate = AuthorizeUserDelegate(parentController: self)

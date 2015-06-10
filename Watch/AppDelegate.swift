@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             region: AWSRegionType.USEast1, credentialsProvider: credentialsProvider)
         
         AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = defaultServiceConfiguration
-
+        
         return true
     }
     
