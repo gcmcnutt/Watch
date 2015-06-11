@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJH-Be-4R4">
-                                <rect key="frame" x="79" y="28" width="162" height="36"/>
+                                <rect key="frame" x="16" y="20" width="162" height="36"/>
                                 <state key="normal" image="btnLWA_gold_157x36.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -25,25 +25,14 @@
                                     <action selector="amznLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c7r-Wv-524"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Am-pj-DzW">
-                                <rect key="frame" x="6" y="228" width="308" height="282"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiq-8R-svS">
-                                <rect key="frame" x="132" y="518" width="56" height="30"/>
+                                <rect key="frame" x="206" y="23" width="56" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Logout">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="amznLogout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I1m-LS-cue"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdS-6b-z5V">
-                                <rect key="frame" x="113" y="198" width="95" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Fetch"/>
-                                <connections>
-                                    <action selector="fetchS3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1lR-QP-EnH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y58-lo-90y">
@@ -94,6 +83,29 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enable Location Feed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ur-h8-oT6">
+                                <rect key="frame" x="16" y="187" width="188" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lN2-ej-IcC">
+                                <rect key="frame" x="255" y="182" width="51" height="31"/>
+                                <connections>
+                                    <action selector="locationState:" destination="BYZ-38-t0r" eventType="valueChanged" id="ttY-oF-ess"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last position report" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2b-Tz-Zna">
+                                <rect key="frame" x="16" y="216" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="10"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last flush time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ht-Sz-bP0">
+                                <rect key="frame" x="16" y="234" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="10"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -101,9 +113,10 @@
                     <connections>
                         <outlet property="emailField" destination="meB-OE-q1z" id="2qq-Xa-bee"/>
                         <outlet property="idField" destination="n6K-fB-ffY" id="D9U-kH-drv"/>
+                        <outlet property="lastFlushTime" destination="8ht-Sz-bP0" id="8xJ-DF-lAi"/>
+                        <outlet property="locationText" destination="H2b-Tz-Zna" id="6uu-rx-Kdv"/>
                         <outlet property="nameField" destination="Y58-lo-90y" id="glb-fI-toq"/>
                         <outlet property="postalField" destination="3zI-Xf-bCe" id="Qez-aV-yZb"/>
-                        <outletCollection property="photoFrame" destination="9Am-pj-DzW" collectionClass="NSMutableArray" id="cbx-cQ-BJG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

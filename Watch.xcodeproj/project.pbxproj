@@ -30,6 +30,7 @@
 		D353E6C41B1BBBCD005B203A /* NotificationPayload.apns in Resources */ = {isa = PBXBuildFile; fileRef = D353E6C31B1BBBCD005B203A /* NotificationPayload.apns */; };
 		D3A83E081B250E3F0051A561 /* AccessTokenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A83E071B250E3F0051A561 /* AccessTokenDelegate.swift */; };
 		D3A83E0A1B255E370051A561 /* LogoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A83E091B255E370051A561 /* LogoutDelegate.swift */; };
+		D3A83E0E1B2937990051A561 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A83E0D1B2937990051A561 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		D353E6C31B1BBBCD005B203A /* NotificationPayload.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NotificationPayload.apns; sourceTree = "<group>"; };
 		D3A83E071B250E3F0051A561 /* AccessTokenDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenDelegate.swift; sourceTree = "<group>"; };
 		D3A83E091B255E370051A561 /* LogoutDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutDelegate.swift; sourceTree = "<group>"; };
+		D3A83E0D1B2937990051A561 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F28D94F0BB4761ED166FA774 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3A83E0E1B2937990051A561 /* CoreLocation.framework in Frameworks */,
 				D342C45D1B23D5E1003CE7E4 /* Security.framework in Frameworks */,
 				D342C45B1B23D553003CE7E4 /* LoginWithAmazon.framework in Frameworks */,
 				AF97943E5E90FB859B6E49F8 /* libPods.a in Frameworks */,
@@ -136,6 +139,7 @@
 		10E84883ED45D1F70DD27EC2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3A83E0D1B2937990051A561 /* CoreLocation.framework */,
 				D342C45C1B23D5E1003CE7E4 /* Security.framework */,
 				D342C45A1B23D553003CE7E4 /* LoginWithAmazon.framework */,
 				4D2FCEE655B01CEE8975A648 /* libPods.a */,
