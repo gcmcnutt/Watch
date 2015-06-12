@@ -13,6 +13,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var kinesisRecorder: AWSKinesisRecorder!
     var timeLastFlush = NSDate()
+    var storeCountInt = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,13 +53,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // TODO some work to do here with async errors, yada
         let task = kinesisRecorder.saveRecord(position, streamName: "watch")
         
-        if (kinesisRecorder.diskBytesUsed > 1000000 ||
+        var size = kinesisRecorder.diskBytesUsed
+        if (size > 1000000 ||
             NSDate().timeIntervalSinceDate(timeLastFlush) > 30) {
+            // TODO this whole thing should be a subtask as it'll block when offline or no auth.
             task.waitUntilFinished()
             kinesisRecorder.submitAllRecords()
             timeLastFlush = NSDate()
             lastFlushTime.text = dateFormatter.stringFromDate(timeLastFlush)
+            storeCount.text = "Store Count: " + String(++storeCountInt)
         }
+        localStorage.text = "Local Storage: " + String(size)
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,6 +71,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBOutlet weak var storeCount: UILabel!
+    @IBOutlet weak var localStorage: UILabel!
     @IBOutlet weak var lastFlushTime: UILabel!
     @IBOutlet weak var locationText: UILabel!
     @IBOutlet var photoFrame: [UIImageView]!
